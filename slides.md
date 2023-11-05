@@ -31,7 +31,7 @@ I'm Vanessa Otto
 Head of Frontend at <a href="https://www.zavvy.io/" target="_blank" rel="nofollow noopener">Zavvy</a> <br>
 Co-Host of <a href="https://workingdraft.de" target="_blank" rel="nofollow noopener">Working Draft</a>, <a href="https://expect-exception.netlify.app/" target="_blank" rel="nofollow noopener">Working Draft</a>, and <a href="https://ausbaufaehig-podcast.de/" target="_blank" rel="nofollow noopener">Ausbaufähig</a> <br><br>
 Social: @vannsl / @vanessa_otto<br>
-<span class="opacity-60">X, Mastodon, Bluesky <span class="text-xs">and whatever will come in future</span></span>
+<span class="opacity-60">X, Mastodon, Bluesky</span>
 
 
 <p v-click class="absolute bottom-23 left-45 transform -rotate-10">... and I wanted to add AI to our platform</p>
@@ -588,7 +588,7 @@ layout: end
 
 Thanks
 
-Twixxter: @vannsl
+X: @vannsl
 
 Mastodon: @vanessa_otto@hachyderm.io
 
