@@ -19,11 +19,9 @@ mdc: true
 # Unleashing the Power of AI: Integrating Tiptap, OpenAI, and Vue.js
 
 ---
-
 transition: slide-up
 layout: image-right
 image: https://res.cloudinary.com/vannsl-io/image/upload/v1555928691/IMG_4127.jpg
-
 ---
 
 # Hi!
@@ -34,6 +32,7 @@ Head of Frontend at <a href="https://www.zavvy.io/" target="_blank" rel="nofollo
 Co-Host of <a href="https://workingdraft.de" target="_blank" rel="nofollow noopener">Working Draft</a>, <a href="https://expect-exception.netlify.app/" target="_blank" rel="nofollow noopener">Working Draft</a>, and <a href="https://ausbaufaehig-podcast.de/" target="_blank" rel="nofollow noopener">Ausbaufähig</a> <br><br>
 Social: @vannsl / @vanessa_otto<br>
 <span class="opacity-60">X, Mastodon, Bluesky <span class="text-xs">and whatever will come in future</span></span>
+
 
 <p v-click class="absolute bottom-23 left-45 transform -rotate-10">... and I wanted to add AI to our platform</p>
 
@@ -62,15 +61,17 @@ we will talk about
 
 ---
 
+
 # What we needed
 
 <a href="https://app.zavvy.io/company_admin/journeys/38835/builder/edit?sectionId=571744#/" target="_blank" rel="nofollow noopener">Zavvy</a> is a people enablement platform. One feature is to create and manage employee journeys used for Onboarding.
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Technical Research
+
 
 <v-clicks>
 
@@ -78,57 +79,61 @@ we will talk about
 - "Notion like" design (floating menus)
 - Custom "blocks": embeddings, AI widgets, etc.
 - Markdown Support, Keyboard Shortcuts, Collaboration
-- Developer Experience\* (Docs, Vue 3 Support)
+- Developer Experience* (Docs, Vue 3 Support)
 
 </v-clicks>
 
 <p v-click class="opacity-60">*Strong DX can lead to great UX</p>
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 <div style="overflow-y:scroll; height: 100vh;padding-bottom:400px;">
 <img src="/research.png">
 </div>
 
+
+
+---
+transition: slide-up
 ---
 
-## transition: slide-up
 
 ### Decision for Tiptap
 
-|               |                                            |
-| ------------- | ------------------------------------------ |
-| 🤩 **Pro**    | Headless UI                                |
-|               | Modern framework, easy to get started with |
-|               | Extensible (own plugins)                   |
-| 😞 **Contra** | Headless UI means (almost) no UI           |
-|               | Was in beta / still early release          |
+|     |     |
+| --- | --- |
+| 🤩 **Pro** | Headless UI |
+|  | Modern framework, easy to get started with |
+|  | Extensible (own plugins) |
+| 😞 **Contra** | Headless UI means (almost) no UI |
+|  | Was in beta / still early release |
 
 <!--
 |  | Albeit good documentation, no big community yet - and some hiccups after the release. Some examples with Vue 2, some in Vue 3. Although TypeScript support is pretty well, most examples come without. |
 -->
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 # Tiptap Framework
 
-|                         |                                                      |
-| ----------------------- | ---------------------------------------------------- |
-| **Nodes**               | <code>block</code>                                   |
-|                         | Paragraph, Bullet list, Code blocks, etc.            |
-| **Marks**               | <code>inline</code>                                  |
-|                         | bold, italic, code, etc.                             |
-| **Extensions**          | First party, community, and your own                 |
-| **Commands**            | Programmatically change content and alter selections |
+
+|     |     |
+| --- | --- |
+| **Nodes** | <code>block</code> |
+|  | Paragraph, Bullet list, Code blocks, etc. |
+| **Marks** | <code>inline</code> |
+| | bold, italic, code, etc. |
+| **Extensions** | First party, community, and your own |
+| **Commands** | Programmatically change content and alter selections |
 | <code>@tiptap/pm</code> | Tiptap is built on ProseMirror, internals accessible |
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 # Create Editor
 
@@ -150,7 +155,7 @@ const editor = new Editor({
 
 <div v-click="[3, 4]" class="absolute bottom-12 left-45 shadow">
 
-```ts
+```ts 
 extensions: initializeExtensions(
   {
     promptConfig: props.promptConfig,
@@ -165,7 +170,7 @@ extensions: initializeExtensions(
 <div v-click="[5, 7]">
 <div class="absolute bottom-23 left-20 shadow">
 
-```ts
+```ts 
 const updateModelValue = debounce((value: string) => {
   const cleanedHtml = cleanHtml(value);
   const isEmpty = isHtmlEmpty(cleanedHtml);
@@ -176,7 +181,7 @@ const updateModelValue = debounce((value: string) => {
 </div>
 <div v-click=[6,7] class="absolute bottom-23 right-0 shadow">
 
-```ts
+```ts 
 function cleanHtml(xmlString: string) {
   const documentFragment = document.createElement("template");
   documentFragment.innerHTML = xmlString;
@@ -196,8 +201,8 @@ function cleanHtml(xmlString: string) {
 <arrow v-click="[6, 7]" x1="520" y1="300" x2="300" y2="380" color="#564" width="3" arrowSize="1" />
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 # Initialize Extensions
 
@@ -220,9 +225,10 @@ function cleanHtml(xmlString: string) {
   ActionTextAttachmentExtension.configure(),
   ZavvyAiExtension.configure(),
   BubbleMenu.configure({
-    element: document.querySelector(".menu"),
+    element: document.querySelector('.menu'),
   }),
 ];
+
 ```
 
 <arrow  v-click="[1,2]" x1="530" y1="130" x2="250" y2="130" color="#564" width="3" arrowSize="1" />
@@ -265,7 +271,7 @@ function cleanHtml(xmlString: string) {
 
 <arrow  v-click="[2, 3]" x1="380" y1="130" x2="250" y2="160" color="#564" width="3" arrowSize="1" />
 <video v-click="[2, 3]" class="absolute top-20 right-20" width="500" autoplay controls>
-  <!-- <source src="/headline.mov" type="video/mp4"> -->
+  <source src="/headline.mov" type="video/mp4">
 </video>
 
 <img v-click="[3, 4]" class="absolute top-60 right-20" src="/placeholder.png" width="300">
@@ -288,10 +294,11 @@ Link.configure({
 </div>
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 # Bubble menu
+
 
 <div v-click="[1,5]">
 
@@ -317,12 +324,11 @@ Link.configure({
 <img src="/bubble_menu_1.png" style="width:300px" class="absolute shadow top-10 right-20">
 <img src="/bubble_menu_2.png" style="width:300px" class="absolute shadow bottom-10 right-20">
 
----
 
+---
 transition: slide-up
 layout: image-right
 image: "./floating_menu_1.png"
-
 ---
 
 # Floating Menu
@@ -344,15 +350,13 @@ const suggestions = [
     },
   },
   // ...
-];
+]
 ```
 
 ---
-
 transition: slide-up
 layout: image-right
 image: "./floating_menu.png"
-
 ---
 
 # Floating Menu
@@ -371,9 +375,9 @@ const items = [
         .setZavvyAiPromptActionCompletion()
         .run();
     },
-  },
+  }
   // ...
-];
+]
 ```
 
 ---
@@ -421,33 +425,34 @@ const ZavvyAiExtension = Node.create<ZavvyAiOptions>({
 
 ```html
 <script setup lang="ts">
-  import { nodeViewProps, NodeViewWrapper } from "@tiptap/vue-3";
+import { nodeViewProps, NodeViewWrapper } from "@tiptap/vue-3";
 
-  const props = defineProps(nodeViewProps);
+const props = defineProps(nodeViewProps);
 
-  constole.log(props.node.attrs.prompt); // "completion"
+constole.log(props.node.attrs.prompt); // "completion"
 </script>
 
 <template>
-  <NodeViewWrapper> Hello world! </NodeViewWrapper>
+  <NodeViewWrapper>
+    Hello world!
+  </NodeViewWrapper>
 </template>
 ```
-
 ---
 
 # Input Field
 
 ```html
 <script setup lang="ts">
-  import { ref } from "vue";
+import { ref } from "vue";
 
-  const inputValue = ref("");
-  const responseText = ref("");
+const inputValue = ref("");
+const responseText = ref("");
 
-  watch(inputValue, (value) => {
-    // make call to open AI with prompt
-    responseText.value = "Dummy Response";
-  }
+watch(inputValue, (value) => {
+  // make call to open AI with prompt
+  responseText.value = "Dummy Response";
+}
 </script>
 
 <template>
@@ -457,9 +462,7 @@ const ZavvyAiExtension = Node.create<ZavvyAiOptions>({
   </NodeViewWrapper>
 </template>
 ```
-
 ---
-
 ---
 
 # // make call to open AI with prompt - and then what?
@@ -474,26 +477,24 @@ const ZavvyAiExtension = Node.create<ZavvyAiOptions>({
 
 # Insert and delete
 
+
 <div class="overflow-scroll h-100">
 
 ```html
 <script setup lang="ts">
-  const props = defineProps(nodeViewProps);
+const props = defineProps(nodeViewProps);
 
-  function insertAndDeleteNode() {
-    // inserts AI content directly before this node
-    props.editor
-      .chain()
-      .focus()
-      .insertContentAt(
-        props.editor.state.selection.$anchor.pos,
-        responseText.value
-      )
-      .run();
+function insertAndDeleteNode() {
+  // inserts AI content directly before this node
+  props.editor
+    .chain()
+    .focus()
+    .insertContentAt(props.editor.state.selection.$anchor.pos, responseText.value)
+    .run();
 
-    props.deleteNode();
-    props.editor.commands.focus();
-  }
+  props.deleteNode();
+  props.editor.commands.focus();
+}
 </script>
 
 <template>
@@ -505,9 +506,10 @@ const ZavvyAiExtension = Node.create<ZavvyAiOptions>({
 
 </div>
 
----
 
-## transition: slide-left
+---
+transition: slide-left
+---
 
 # OpenAI
 
@@ -530,7 +532,6 @@ Receives an array of messages:
 ```
 [{"role": "user", "content": 'Translate the following English text to French: "{text}"'}]
 ```
-
 </div>
 
 <div v-click>
@@ -539,21 +540,23 @@ Receives an array of messages:
 
 </div>
 
----
 
-## transition: slide-up
+
+---
+transition: slide-up
+---
 
 # OpenAI Models
 
-|                            | **Model families**                                               | **API Endpoint**                           |
-| -------------------------- | ---------------------------------------------------------------- | ------------------------------------------ |
-| Newer models (2023–)       | gpt-4, gpt-3.5-turbo                                             | https://api.openai.com/v1/chat/completions |
-| Updated base models (2023) | babbage-002, davinci-002                                         | https://api.openai.com/v1/completions      |
-| Legacy models (2020–2022)  | text-davinci-003, text-davinci-002, davinci, curie, babbage, ada | https://api.openai.com/v1/completions      |
+|     | **Model families**   | **API Endpoint** |
+| --- | --- | --- |
+| Newer models (2023–) | gpt-4, gpt-3.5-turbo | https://api.openai.com/v1/chat/completions|
+| Updated base models (2023) | babbage-002, davinci-002 | https://api.openai.com/v1/completions|
+| Legacy models (2020–2022) | text-davinci-003, text-davinci-002, davinci, curie, babbage, ada | https://api.openai.com/v1/completions|
 
 ---
-
-## transition: slide-left
+transition: slide-left
+---
 
 # Prompt injection
 
@@ -570,8 +573,8 @@ Translate the following English text to French: "{text}"
 </div>
 
 ---
-
-## transition: slide-up
+transition: slide-up
+---
 
 # Prompt injection
 
@@ -580,11 +583,12 @@ Translate the following English text to French: "{text}"
 <a href="https://gandalf.lakera.ai/" target="_blank" rel="noopener noreferrer" class="text-center">Gandalf Game</a>
 
 ---
-
-## layout: end
+layout: end
+---
 
 Thanks
 
 Twixxter: @vannsl
 
 Mastodon: @vanessa_otto@hachyderm.io
+
