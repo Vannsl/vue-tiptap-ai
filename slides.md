@@ -452,7 +452,8 @@ watch(inputValue, (value) => {
 
 <template>
   <NodeViewWrapper>
-    <input v-model="inputValue" />
+    <label for="aiInput">Prompt</label>
+    <input id="aiInput" v-model="inputValue" />
     <div v-if="responseText">{{ responseText }}</div>
   </NodeViewWrapper>
 </template>
