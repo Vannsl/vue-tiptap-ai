@@ -384,7 +384,7 @@ const items = [
 ```ts
 const ZavvyAiExtension = Node.create<ZavvyAiOptions>({
   // ...
-  name: "zavvy-ai"
+  name: "zavvy-ai",
 
   addAttributes() {
     return {
