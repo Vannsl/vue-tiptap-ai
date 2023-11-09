@@ -328,7 +328,7 @@ image: "./floating_menu_1.png"
 
 # Floating Menu
 
-```ts {all|8-15}
+```ts {all|7-14}
 const suggestions = [
   // ...
   {
