@@ -33,12 +33,12 @@ Co-Host of <a href="https://workingdraft.de" target="_blank" rel="nofollow noope
 Social: @vannsl / @vanessa_otto<br>
 <span class="opacity-60">X, Mastodon, Bluesky</span>
 
+<hr>
+
+<a href="https://vuejs-tiptap-openai.netlify.app" class="text-xl" target="_blank" rel="nofollow noopener">https://vuejs-tiptap-openai.netlify.app</a>
+
 
 <p v-click class="absolute bottom-23 left-45 transform -rotate-10">... and I wanted to add AI to our platform</p>
-
----
-
-# What did you always want to learn about?
 
 ---
 
@@ -59,7 +59,15 @@ we will talk about
 
 # What we needed
 
-<a href="https://app.zavvy.io/company_admin/journeys/38835/builder/edit?sectionId=571744#/" target="_blank" rel="nofollow noopener">Zavvy</a> is a people enablement platform. One feature is to create and manage employee journeys used for Onboarding.
+<a href="https://app.zavvy.io/company_admin/journeys/38835/builder/edit?sectionId=571744#/" target="_blank" rel="nofollow noopener">Zavvy</a> is a people enablement platform.
+
+A lot of features use rich text editors. Examples:
+
+- employee journeys used for onboarding, training, etc.
+- career frameworks
+- feedback cycles
+- growth plans
+- etc.
 
 ---
 layout: default
@@ -536,8 +544,6 @@ Receives an array of messages:
 
 </div>
 
-
-
 ---
 transition: slide-up
 ---
@@ -549,6 +555,59 @@ transition: slide-up
 | Newer models (2023–) | gpt-4, gpt-3.5-turbo | https://api.openai.com/v1/chat/completions|
 | Updated base models (2023) | babbage-002, davinci-002 | https://api.openai.com/v1/completions|
 | Legacy models (2020–2022) | text-davinci-003, text-davinci-002, davinci, curie, babbage, ada | https://api.openai.com/v1/completions|
+
+---
+transition: slide-left
+---
+
+### Writing a prompt to translate text
+
+<p class="mb-4"></p>
+
+# Translate the following text into "language": "text"
+
+---
+transition: slide-up
+---
+
+### Writing a prompt to translate text
+
+<p class="mb-4"></p>
+
+# Translate the following text to "language" while keeping its punctuation including dashes, linguistic styles and tone. Translate the following text: "text"
+
+---
+transition: slide-up
+---
+
+### Writing a prompt to translate text
+
+<p class="mb-4"></p>
+
+# I will speak to you in any language and you will detect the language, translate it to "language" while keeping its punctuation including dashes, linguistic styles and tone. Keep lists as lists. Don't start with the name or the language or other attributes. Translate the following text: "text"
+
+
+---
+transition: slide-left
+---
+
+# Tokenizer
+
+
+- <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">Learn about language model tokenization</a>
+
+- <a href="https://platform.openai.com/docs/models" target="_blank" rel="noopener noreferrer">Models - Token Limits</a>
+
+
+<v-click>
+
+> ⚠️ The token limit includes the prompt (+ text) and the response!
+
+Example: `gpt-3.5-turbo` has a token limit of 4096.
+
+<a href="https://www.lipsum.com/" target="_blank" rel="noopener noreferrer">Lorem Ipsum</a>
+
+</v-click>
 
 ---
 transition: slide-left
